@@ -11,7 +11,7 @@ def diagline(strings, distance):
   #All variables have been set.
   
   print(strings)
-  while turtlesdefined <= strings:
+  while turtlesdefined < strings:
     for turtlename in turtlenamelist:
       #Position depending on how many strings already exist.
       turtlename.forward(turtlesdefined*distance)
