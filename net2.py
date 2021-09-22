@@ -12,7 +12,7 @@ def diagline(strings, distance):
   for turtlename in turtlenamelist:
     if turtlesdefined <= strings:  
       turtlename.forward(turtlesdefined*distance)
-      edge = list(turtlename.position())
+      edge = list(turtlename.position())[0]
       print(edge)
       turtlesdefined += 1
   for turtlename in turtlenamelist:
@@ -22,7 +22,7 @@ def diagline(strings, distance):
     turtlex = list(turtlename.position())
     print(turtlex[0])
     if turtlex < edge:
-      print(turtlename.position())
+   #   print(turtlename.position())
       turtlename.forward(45)
  #     #45 isn't the right number but it's fine for now
  #     turtlename.right(90)
