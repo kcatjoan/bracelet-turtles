@@ -12,5 +12,4 @@ line2 = turtle.Turtle()
 numstrings = 5
     
 diagline(line1, 40)
-line2.forward()
 turtle.exitonclick()
