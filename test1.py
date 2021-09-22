@@ -1,6 +1,5 @@
 import turtle
 wn = turtle.Screen
 robin = turtle.Turtle()
-robin.forward(5)
+robin.forward(500)
 turtle.exitonclick()
-#wn.exitonclick()
