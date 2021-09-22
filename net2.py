@@ -24,15 +24,15 @@ def diagline(strings, distance):
       turtlename.right(45)
       turtlename.down()
     #converts turtle position into list
-    turtlex = list(turtlename.position())[0]
-    print(turtlex)
-    if turtlex < edge:
-   #   print(turtlename.position())
-      turtlename.forward(45)
- #     #45 isn't the right number but it's fine for now
-      turtlename.right(90)
- #     if turtlename.position()[0] > 0:
-      turtlename.forward(45)
+      turtlex = list(turtlename.position())[0]
+      print(turtlex)
+      if turtlex < edge:
+     #   print(turtlename.position())
+        turtlename.forward(45)
+   #     #45 isn't the right number but it's fine for now
+        turtlename.right(90)
+   #     if turtlename.position()[0] > 0:
+        turtlename.forward(45)
       turtlesweaving += 1
       
       
