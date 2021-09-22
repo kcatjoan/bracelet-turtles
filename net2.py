@@ -12,8 +12,8 @@ def diagline(strings, distance):
   for turtlename in turtlenamelist:
     if turtlesdefined <= strings:  
       turtlename.forward(turtlesdefined*distance)
-      edge = turtlename.position()
- #     print(edge)
+      edge = list(turtlename.position())
+      print(edge)
       turtlesdefined += 1
   for turtlename in turtlenamelist:
     if turtlesweaving < strings:
