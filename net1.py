@@ -1,11 +1,13 @@
 import turtle
 line1 = turtle.Turtle()
-increments = 5
+numstrings = 5
 timesrun = 0
-
-line1.right(45)
-while timesrun < increments:
-  line1.forward(40)
-  line1.dot()
-  timesrun += 1
+def diagline(turtlename): 
+  turtlename.right(45)
+  while timesrun < numstrings:
+    turtlename.forward(40)
+    turtlename.dot()
+    timesrun += 1
+    
+diagline(line1)
 turtle.exitonclick()
