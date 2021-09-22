@@ -11,13 +11,13 @@ def diagline(strings, distance):
   #All variables have been set.
   
   print(strings)
-for turtlename in turtlenamelist:
-  while turtlesdefined < strings:
-    #Position depending on how many strings already exist.
-    turtlename.forward(turtlesdefined*distance)
-    edge = turtlename.position()
-    print(turtlesdefined)
-    turtlesdefined += 1
+  for turtlename in turtlenamelist:
+    while turtlesdefined < strings:
+      #Position depending on how many strings already exist.
+      turtlename.forward(turtlesdefined*distance)
+      edge = turtlename.position()
+      print(turtlesdefined)
+      turtlesdefined += 1
   while turtlesweaving < strings:
     for turtlename in turtlenamelist:
       turtlename.right(45)
