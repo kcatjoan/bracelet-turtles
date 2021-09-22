@@ -1,8 +1,8 @@
 import turtle
 line1 = turtle.Turtle()
 numstrings = 5
-timesrun = 0
 def diagline(turtlename): 
+  timesrun = 0
   turtlename.right(45)
   while timesrun < numstrings:
     turtlename.forward(40)
