@@ -6,7 +6,7 @@ timesrun = 0
 
 robin.up()
 #robin.speed(8)
-while timesrun >= 8:
+#while timesrun >= 8:
   for x in ldistances:
     robin.forward(x)
     robin.dot()
