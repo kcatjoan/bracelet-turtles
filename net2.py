@@ -9,17 +9,21 @@ def diagline(strings, distance):
             #This program maxes out at 10 strings. Do not use more
             #distancemoved = 0. You don't need this because turtle.position() exists. I don't know how to use it yet
   #All variables have been set.
-  while turtlesdefined < strings:
+  while turtlesdefined <= strings:
     for turtlename in turtlenamelist:
       #Position depending on how many strings already exist.
       turtlename.forward(turtlesdefined*distance)
+      edge = turtlename.position()
       turtlesdefined += 1
   while turtlesweaving < strings:
     for turtlename in turtlenamelist:
       turtlename.right(45)
-      #go forward, dotting at intervals, until y-position reaches the edge of the bracelet
-      print(turtlename.position()) #Temporary-- make sure I know what turtle.position() does
-      #turtlename.left.90
+      #go forward, dotting at intervals, until x-position reaches the edge of the bracelet
+      while turtlename.position()[0] > 200:
+        print(turtlename.position())
+        turtlename.forward(45)
+      #45 isn't the right number but it's fine for now
+      turtlename.left.90
       #forward again until the other edge of the bracelet
       turtlesweaving += 1
       
