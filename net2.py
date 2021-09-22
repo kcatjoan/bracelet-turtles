@@ -20,13 +20,13 @@ def diagline(strings, distance):
     for turtlename in turtlenamelist:
       turtlename.right(45)
       #go forward, dotting at intervals, until x-position reaches the edge of the bracelet
-      while turtlename.position()[0] < edge:
-        print(turtlename.position())
-        turtlename.forward(45)
+ #     while turtlename.position()[0] < edge:
+ #       print(turtlename.position())
+ #       turtlename.forward(45)
       #45 isn't the right number but it's fine for now
-      turtlename.left(90)
-      while turtlename.position()[0] > 0:
-        turtlename.forward(45)
+ #     turtlename.left(90)
+ #     while turtlename.position()[0] > 0:
+ #       turtlename.forward(45)
       turtlesweaving += 1
       
       
