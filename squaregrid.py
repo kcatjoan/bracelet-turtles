@@ -13,3 +13,4 @@ for x in ldistances:
     robin.left(90)
     timesrun += 1
 robin.goto(0,0)
+turtle.exitonclick()
