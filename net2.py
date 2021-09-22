@@ -12,7 +12,7 @@ def diagline(strings, distance):
   #For loop sets start position of each string
   for turtlename in turtlenamelist:
     if turtlesdefined <= strings:  
-      turtlename.up
+      turtlename.up()
       turtlename.forward(turtlesdefined*distance)
       #sets edge of bracelet to each turtle end position, ideally leaving "edge" as the farthest distance traveled
       edge = list(turtlename.position())[0]
@@ -22,7 +22,7 @@ def diagline(strings, distance):
   for turtlename in turtlenamelist:
     if turtlesweaving < strings:
       turtlename.right(45)
-      turtlename.down
+      turtlename.down()
     #converts turtle position into list
     turtlex = list(turtlename.position())[0]
     print(turtlex)
@@ -30,7 +30,7 @@ def diagline(strings, distance):
    #   print(turtlename.position())
       turtlename.forward(45)
  #     #45 isn't the right number but it's fine for now
-      turtlename.right(90)
+     turtlename.right(90)
  #     if turtlename.position()[0] > 0:
       turtlename.forward(45)
       turtlesweaving += 1
