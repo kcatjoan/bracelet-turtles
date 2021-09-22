@@ -1,3 +1,4 @@
 import turtle
-robin = turtle.turtle
+wn = turtle.Screen
+robin = turtle.Turtle()
 robin.forward(5)
