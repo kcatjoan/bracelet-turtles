@@ -12,7 +12,7 @@ for x in ldistances:
     robin.dot()
     robin.left(90)
     timesrun = timesrun + 1
-    if timesrun = 8:
+    if timesrun == 8:
       timesrun = 0
 robin.goto(0,0)
 turtle.exitonclick()
