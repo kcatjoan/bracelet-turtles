@@ -10,6 +10,7 @@ def diagline(strings, distance):
             #distancemoved = 0. You don't need this because turtle.position() exists. I don't know how to use it yet
   #All variables have been set.
   
+  print(strings)
   while turtlesdefined <= strings:
     for turtlename in turtlenamelist:
       #Position depending on how many strings already exist.
