@@ -7,12 +7,10 @@ def diagline(turtlename, distance):
     turtlename.dot()
     timesrun += 1
 
-
 line1 = turtle.Turtle()
 line2 = turtle.Turtle()
 numstrings = 5
-
     
 diagline(line1, 40)
-line2.forward(
+line2.forward()
 turtle.exitonclick()
