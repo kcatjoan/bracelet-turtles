@@ -4,24 +4,29 @@ def diagline(strings, distance):
   turtlesdefined = 0
   turtlesweaving = 0
   [line1, line2, line3, line4, line5, line6, line7, line8, line9, line10] = [turtle.Turtle(), turtle.Turtle(), turtle.Turtle(), turtle.Turtle(), turtle.Turtle(), turtle.Turtle(), turtle.Turtle(), turtle.Turtle(), turtle.Turtle(), turtle.Turtle()]
-            #There's gotta be a better way to do that.
+            #There's gotta be a better way to do that. Defines a bunch of turtles in order
   turtlenamelist = [line1, line2, line3, line4, line5, line6, line7, line8, line9, line10]
             #This program maxes out at 10 strings. Do not use more
-            #distancemoved = 0. You don't need this because turtle.position() exists. I don't know how to use it yet
   #All variables have been set.
+  
+  #For loop sets start position of each string
   for turtlename in turtlenamelist:
     if turtlesdefined <= strings:  
+      turtlename.up
       turtlename.forward(turtlesdefined*distance)
+      #sets edge of bracelet to each turtle end position, ideally leaving "edge" as the farthest distance traveled
       edge = list(turtlename.position())[0]
-      print(edge)
       turtlesdefined += 1
+  print(edge)
+  #sets string angles
   for turtlename in turtlenamelist:
     if turtlesweaving < strings:
       turtlename.right(45)
-      #go forward, dotting at intervals, until x-position reaches the edge of the bracelet. DON'T YET KNOW HOW TO FORMAT W. POSITION()
-    turtlex = list(turtlename.position())
-    print(turtlex[0])
-    if turtlex[0] < edge:
+      turtlename.down
+    #converts turtle position into list
+    turtlex = list(turtlename.position())[0]
+    print(turtlex)
+    if turtlex < edge:
    #   print(turtlename.position())
       turtlename.forward(45)
  #     #45 isn't the right number but it's fine for now
