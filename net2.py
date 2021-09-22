@@ -9,10 +9,8 @@ def diagline(strings, distance):
             #This program maxes out at 10 strings. Do not use more
             #distancemoved = 0. You don't need this because turtle.position() exists. I don't know how to use it yet
   #All variables have been set.
-  
-  print(strings)
-  for turtlename in turtlenamelist:
-    while turtlesdefined < strings:
+  if turtlesdefined < strings:
+    for turtlename in turtlenamelist:
       #Position depending on how many strings already exist.
       turtlename.forward(turtlesdefined*distance)
       edge = turtlename.position()
