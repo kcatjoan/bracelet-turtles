@@ -9,6 +9,7 @@ def diagline(strings, distance):
   while turtlesdefined < strings:
     for turtlename in turtlenamelist:
       #Position depending on how many strings already exist.
+      turtlename.forward(turtlesdefined*distance)
       turtlesdefined += 1
   while turtlesweaving < strings:
     for turtlename in turtlenamelist:
@@ -18,7 +19,9 @@ def diagline(strings, distance):
       #turtlename.left.90
       #forward again until the other edge of the bracelet
       turtlesweaving += 1
-
+      
+      
+diagline(5, 40)
 turtle.exitonclick()
 
 
