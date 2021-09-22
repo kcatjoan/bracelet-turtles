@@ -30,7 +30,7 @@ def diagline(strings, distance):
    #   print(turtlename.position())
       turtlename.forward(45)
  #     #45 isn't the right number but it's fine for now
-     turtlename.right(90)
+      turtlename.right(90)
  #     if turtlename.position()[0] > 0:
       turtlename.forward(45)
       turtlesweaving += 1
