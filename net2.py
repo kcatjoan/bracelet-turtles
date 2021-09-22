@@ -21,7 +21,7 @@ def diagline(strings, distance):
       #go forward, dotting at intervals, until x-position reaches the edge of the bracelet. DON'T YET KNOW HOW TO FORMAT W. POSITION()
     turtlex = list(turtlename.position())
     print(turtlex[0])
-    if turtlex < edge:
+    if turtlex[0] < edge:
    #   print(turtlename.position())
       turtlename.forward(45)
  #     #45 isn't the right number but it's fine for now
