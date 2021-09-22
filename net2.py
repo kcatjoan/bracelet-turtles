@@ -26,7 +26,7 @@ def diagline(strings, distance):
  #     turtlename.right(90)
  #     if turtlename.position()[0] > 0:
  #      turtlename.forward(45)
-        turtlesweaving += 1
+      turtlesweaving += 1
       
       
 diagline(5, 40)
