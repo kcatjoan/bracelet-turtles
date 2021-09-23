@@ -19,16 +19,12 @@ def doublechevronnet(strings, distance):
       rightedge = list(turtlename.pos())[0]
       turtlename.down()
       turtlename.right(45)
-      print(rightedge)
       turtlesdefined += 1
       #positions turtles, leaves "rightedge" as the farthest distance traveled
     #then each turtle (FIGURE  OUT HOW TO HAVE THE TURTLES SPLIT):
   for turtlename in turtlenamelist:
-    if 0.0 < list(turtlename.pos())[0] < rightedge:
+    if 0.0 <= float(list(turtlename.pos())[0]) <= rightedge:
       print(turtlename + "yeah")
-
-                                         
-
 
   turtle.exitonclick()
 doublechevronnet(5,40)
