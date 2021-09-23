@@ -20,11 +20,10 @@ def doublechevronnet(strings, distance):
       #positions turtles, leaves "rightedge" as the farthest distance traveled
     #(ALSO HAVE THE TURTLES SPLIT):
   print(len(definedturtles))
-  currentxpos = list(turtlename.pos())[0]
-  for turtlename in definedturtles:
-    print(str(turtlename) + "turtle is " + str(currentxpos > 0.0) + "because " + str(currentxpos) + " is not > 0.0")
-#   while 5 == 5:
-#     for turtlename in definedturtles:
+  while 5 == 5:
+    for turtlename in definedturtles:
+       currentxpos = list(turtlename.pos())[0]
+       print(str(turtlename) + "turtle is " + str(currentxpos > 0.0) + "because " + str(currentxpos) + " relation to 0.0")
 #       if 0.0 < currentxpos < rightedge:
 #         turtlename.forward(distance)
 #       elif currentxpos == rightedge:
