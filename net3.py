@@ -30,9 +30,9 @@ def doublechevronnet(strings, distance):
       if 0.0 < currentxpos < rightedge:
         turtlename.forward(distance)
       elif currentxpos == rightedge:
-        turtle.right(90)
+        turtlename.right(90)
       elif currentxpos == 0.0:
-        turtle.left(90)
+        turtlename.left(90)
 
       
   turtle.exitonclick()
