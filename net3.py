@@ -15,7 +15,7 @@ def doublechevronnet(strings, distance):
     if turtlesdefined <= strings:  
       turtlename.up()
       turtlename.forward(turtlesdefined*distance)
-      rightedge = list(turtle.position())
+      rightedge = turtlesdefined*distance
       print(rightedge)
       turtlename.down()
       turtlename.right(45)
