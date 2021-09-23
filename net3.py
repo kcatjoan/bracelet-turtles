@@ -32,7 +32,7 @@ def doublechevronnet(strings, distance):
       currentypos = list(turtlename.pos())[1]
       if 0.0 < currentxpos < rightedge:
           turtlename.forward(distance)
-          turtlename.stamp()
+          turtlename.dot()
       elif currentxpos >= rightedge:
         turtlename.right(90)
         turtlename.forward(distance)
