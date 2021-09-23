@@ -3,6 +3,7 @@ def doublechevronnet(strings, distance):
   turtlesdefined = 0
   definedturtles = []
   turtlesweaving = 0
+  stuckturtles = 0
   dotsmade = 0
   [line1, line2, line3, line4, line5, line6, line7, line8, line9, line10] = [turtle.Turtle(), turtle.Turtle(), turtle.Turtle(), turtle.Turtle(), turtle.Turtle(), turtle.Turtle(), turtle.Turtle(), turtle.Turtle(), turtle.Turtle(), turtle.Turtle()]
   turtlenamelist = [line1, line2, line3, line4, line5, line6, line7, line8, line9, line10]
@@ -20,17 +21,20 @@ def doublechevronnet(strings, distance):
       #positions turtles, leaves "rightedge" as the farthest distance traveled
     #(ALSO HAVE THE TURTLES SPLIT):
   print(len(definedturtles))
-  while 5 == 5:
+  while stuckturtles < strings:
     for turtlename in definedturtles:
       currentxpos = list(turtlename.pos())[0]
       if 0.0 < currentxpos < rightedge:
           turtlename.forward(distance)
       elif currentxpos == rightedge:
         print(str(turtlename) + "at rightedge")
+        stuckturtles += 1
 #         turtlename.right(90)
 #         turtlename.forward(distance)
       elif currentxpos == 0.0:
-              print(str(turtlename) + "at left edge")
+        print(str(turtlename) + "at left edge")
+        stuckturtles += 1
+      
 #         turtlename.left(45)
 #         turtlename.forward(distance)
   
