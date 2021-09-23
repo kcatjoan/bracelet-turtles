@@ -16,11 +16,12 @@ def doublechevronnet(strings, distance):
       turtlename.up()
       turtlename.forward(turtlesdefined*distance)
       rightedge = list(turtle.position())
+      print(rightedge)
       turtlename.down()
       turtlename.right(45)
       turtlesdefined += 1
       #set edge of bracelet to each turtle end position, ideally leaving "edge" as the farthest distance traveled
-  print(rightedge)
+
                                          
 
 
