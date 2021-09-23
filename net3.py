@@ -4,6 +4,6 @@ def doublechevronnet(strings, distance):
   print(turtledict)
   for eachturtle in turtledict:
     print(type(turtledict[eachturtle]))
-    #eachturtle.forward(40)
+    turtledict[eachturtle].forward(40)
   turtle.exitonclick()
 doublechevronnet(5,40)
