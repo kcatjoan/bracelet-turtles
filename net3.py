@@ -21,7 +21,7 @@ def doublechevronnet(strings, distance):
     #(FIGURE  OUT HOW TO HAVE THE TURTLES SPLIT):
     currentxpos = list(turtlename.pos())[0]
     for turtlename in definedturtles:
-      print(str(turtlename) + (currentxpos > 0.0))
+      print(str(turtlename) + str(currentxpos > 0.0))
 #   while 5 == 5:
 #     for turtlename in definedturtles:
 #       if 0.0 < currentxpos < rightedge:
