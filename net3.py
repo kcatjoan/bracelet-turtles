@@ -21,14 +21,14 @@ def doublechevronnet(strings, distance):
     #(FIGURE  OUT HOW TO HAVE THE TURTLES SPLIT):
     currentxpos = list(turtlename.pos())[0]
     print(type(currentxpos))
-#   while 5 == 5:
-#     for turtlename in definedturtles:
-#       if 0.0 < currentxpos < rightedge:
-#         turtlename.forward(distance)
-#       elif currentxpos == rightedge:
-#         turtlename.right(90)
-#       elif currentxpos == 0.0:
-#         turtlename.left(90)
+  while 5 == 5:
+    for turtlename in definedturtles:
+      if 0.0 < currentxpos < rightedge:
+        turtlename.forward(distance)
+      elif currentxpos == rightedge:
+        turtlename.right(90)
+      elif currentxpos == 0.0:
+        turtlename.left(90)
   
-#   turtle.exitonclick()
-# doublechevronnet(5,40)
+  turtle.exitonclick()
+doublechevronnet(5,40)
