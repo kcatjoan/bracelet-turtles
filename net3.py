@@ -29,10 +29,8 @@ def doublechevronnet(strings, distance):
     for turtlename in definedturtles:
       if 0.0 <= currentxpos <= rightedge:
         turtlename.forward(distance)
-      elif currentxpos >= rightedge:
-        turtlename.right(90)
-      elif currentxpos <= 0.0:
-        turtlename.left(90)
+      else:
+        turtle.right(90)
 
       
   turtle.exitonclick()
