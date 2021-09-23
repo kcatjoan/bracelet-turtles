@@ -2,7 +2,7 @@ import turtle
 import math
 def doublechevronnet(strings, distance): 
   horizontaldistance = (((math.sqrt(distance))/2))
-  print(horizontaldistance)
+  print(str(horizontaldistance) + " is one side of an isosceles right triangle whose hypotenuse is " + str(distance))
   turtlesdefined = 0
   definedturtles = []
   turtlesweaving = 0
