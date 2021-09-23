@@ -24,7 +24,7 @@ def doublechevronnet(strings, distance):
     #then each turtle (FIGURE  OUT HOW TO HAVE THE TURTLES SPLIT):
   for turtlename in turtlenamelist:
     if 0.0 <= float(list(turtlename.pos())[0]) <= rightedge:
-      print(turtlename + "yeah")
+      print(str(turtlename) + "yeah")
 
   turtle.exitonclick()
 doublechevronnet(5,40)
