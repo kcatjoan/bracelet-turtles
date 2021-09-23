@@ -1,10 +1,5 @@
 import turtle
-def doublechevronnet(strings, distance):
-#   turtledict = {"line" + str(anynum): {turtle.Turtle()} for anynum in range(strings)}
-#   print(turtledict)
-#   for eachturtle in turtledict:
-#     print(type(turtledict[eachturtle]))
-#     turtledict[eachturtle].forward(40)  
+def doublechevronnet(strings, distance): 
   turtlesdefined = 0
   definedturtles = []
   turtlesweaving = 0
@@ -29,10 +24,10 @@ def doublechevronnet(strings, distance):
     for turtlename in definedturtles:
       if 0.0 < currentxpos < rightedge:
         turtlename.forward(distance)
-      elif currentxpos == rightedge:
-        turtlename.right(90)
-      elif currentxpos == 0.0:
-        turtlename.left(90)
+#       elif currentxpos == rightedge:
+#         turtlename.right(90)
+#       elif currentxpos == 0.0:
+#         turtlename.left(90)
 
       
   turtle.exitonclick()
