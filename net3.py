@@ -18,6 +18,8 @@ def doublechevronnet(strings, distance):
       turtlename.down()
       turtlename.right(45)
       turtlesdefined += 1
+      if turtlename not in definedturtles:
+        del turtlenamelist.(turtlename)
       #positions turtles, leaves "rightedge" as the farthest distance traveled
     #(ALSO HAVE THE TURTLES SPLIT):
   print(len(definedturtles))
