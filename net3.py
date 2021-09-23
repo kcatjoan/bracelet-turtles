@@ -7,6 +7,7 @@ def doublechevronnet(strings, distance):
 #     turtledict[eachturtle].forward(40)  
   turtlesdefined = 0
   turtlesweaving = 0
+  dotsmade = 0
   [line1, line2, line3, line4, line5, line6, line7, line8, line9, line10] = [turtle.Turtle(), turtle.Turtle(), turtle.Turtle(), turtle.Turtle(), turtle.Turtle(), turtle.Turtle(), turtle.Turtle(), turtle.Turtle(), turtle.Turtle(), turtle.Turtle()]
   turtlenamelist = [line1, line2, line3, line4, line5, line6, line7, line8, line9, line10]
   #All variables have been set.
@@ -16,11 +17,13 @@ def doublechevronnet(strings, distance):
       turtlename.up()
       turtlename.forward(turtlesdefined*distance)
       rightedge = turtlesdefined*distance
-      print(rightedge)
       turtlename.down()
       turtlename.right(45)
+      print(turtle.pos())
       turtlesdefined += 1
-      #set edge of bracelet to each turtle end position, ideally leaving "edge" as the farthest distance traveled
+      #positions turtles, leaves "rightedge" as the farthest distance traveled
+    #then each turtle (FIGURE  OUT HOW TO HAVE THE TURTLES SPLIT):
+    
 
                                          
 
