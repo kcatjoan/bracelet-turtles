@@ -1,6 +1,7 @@
 import turtle
+import math
 def doublechevronnet(strings, distance): 
-  horizontaldistance = ((sqrt(distance)/2))
+  horizontaldistance = (((math.sqrt(distance))/2))
   print(horizontaldistance)
   turtlesdefined = 0
   definedturtles = []
