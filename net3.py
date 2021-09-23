@@ -16,10 +16,10 @@ def doublechevronnet(strings, distance):
     if turtlesdefined <= strings:  
       turtlename.up()
       turtlename.forward(turtlesdefined*distance)
-      rightedge = turtlesdefined*distance
+      rightedge = list(turtlename.pos())[0]
       turtlename.down()
       turtlename.right(45)
-      print(turtlename.pos())
+      print(rightedge)
       turtlesdefined += 1
       #positions turtles, leaves "rightedge" as the farthest distance traveled
     #then each turtle (FIGURE  OUT HOW TO HAVE THE TURTLES SPLIT):
