@@ -23,15 +23,16 @@ def doublechevronnet(strings, distance):
   while 5 == 5:
     for turtlename in definedturtles:
       currentxpos = list(turtlename.pos())[0]
-      print(str(turtlename) + "turtle is " + str(0.0 < currentxpos < rightedge) + "because " + str(currentxpos) + " relation to 0.0")
       if 0.0 < currentxpos < rightedge:
           turtlename.forward(distance)
       elif currentxpos == rightedge:
-        turtlename.right(90)
-        turtlename.forward(distance)
+        print(str(turtlename) + "at rightedge")
+#         turtlename.right(90)
+#         turtlename.forward(distance)
       elif currentxpos == 0.0:
-        turtlename.left(90)
-        turtlename.forward(distance)
+              print(str(turtlename) + "at left edge")
+#         turtlename.left(45)
+#         turtlename.forward(distance)
   
   turtle.exitonclick()
 doublechevronnet(5,40)
