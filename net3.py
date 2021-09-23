@@ -31,4 +31,4 @@ def doublechevronnet(strings, distance):
 #         turtlename.left(90)
   
 #   turtle.exitonclick()
-doublechevronnet(5,40)
+# doublechevronnet(5,40)
