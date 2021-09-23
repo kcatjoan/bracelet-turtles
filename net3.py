@@ -31,13 +31,13 @@ def doublechevronnet(strings, distance):
       currentxpos = list(turtlename.pos())[0]
       if 0.0 < currentxpos < rightedge:
           turtlename.forward(distance)
-      elif currentxpos == rightedge:
+      elif currentxpos >= rightedge:
         print(str(turtlename) + "at rightedge")
         turtlename.right(90)
         turtlename.forward(distance)
 #         turtlename.right(90)
 #         turtlename.forward(distance)
-      elif currentxpos == 0.0:
+      elif currentxpos <= 0.0:
         print(str(turtlename) + "at left edge")
         turtlename.left(90)
         turtlename.forward(distance)
