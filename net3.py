@@ -38,7 +38,6 @@ def doublechevronnet(strings, distance):
         print(str(turtlename) + "at left edge")
         turtlename.left(90)
         turtlename.forward(distance)
-        stuckturtles += 1
       
 #         turtlename.left(45)
 #         turtlename.forward(distance)
