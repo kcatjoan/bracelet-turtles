@@ -30,6 +30,7 @@ def doublechevronnet(strings, distance):
         print(str(turtlename) + "at rightedge")
         turtlename.right(90)
         stuckturtles += 1
+        turtlename.forward(distance)
 #         turtlename.right(90)
 #         turtlename.forward(distance)
       elif currentxpos == 0.0:
