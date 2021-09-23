@@ -29,7 +29,6 @@ def doublechevronnet(strings, distance):
 #         turtlename.right(90)
 #       elif currentxpos == 0.0:
 #         turtlename.left(90)
-
-      
+  
   turtle.exitonclick()
 doublechevronnet(5,40)
