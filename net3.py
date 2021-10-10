@@ -10,7 +10,7 @@ def double_chevron_net(strings, distance):
     stringnumber = 0
     timesiterated = 0
     turtleonstring = {}
-    testall = False
+    testall = True
     testrightmove = True
 #going by the stringnumber and the distance, set:
     #the strings (a dictionary: keys are numbers and values are positions)
@@ -26,7 +26,7 @@ def double_chevron_net(strings, distance):
         if turtlesdefined % 2 == 0:
             positiondistance = turtlesdefined*distance/2
             turtlename.rightfacing = True
-            turtlename.color("red") 
+            # turtlename.color("red") 
             if turtlesdefined > 1:
                 stringnumber += 1
         else:
@@ -89,22 +89,28 @@ def double_chevron_net(strings, distance):
         # turtlename = turtledictionary["Turtle number 0"]
         for eachturtle in turtledictionary:
             turtlename = turtledictionary[eachturtle]
-            if turtlename.rightfacing == True:
+            turtlename.hasmoved = False
+            if turtlename.rightfacing == True and turtlename.hasmoved == False:
                 # print("Undergoing rightmove")
                 # print(str(turtleonstring[turtlename]) + " is (str(turtleonstring[turtlename])")
                 rightmove(turtlename)
-            elif turtlename.rightfacing == False:
+                turtlename.hasmoved = True
+            elif turtlename.rightfacing == False and turtlename.hasmoved == False:
                 # print("Undergoing leftmove")
                 # print(str(turtleonstring[turtlename]) + " is (str(turtleonstring[turtlename])")
                 leftmove(turtlename)
+                turtlename.hasmoved = True
             if turtleonstring[turtlename] == strings:
                 turtlename.rightfacing = False
                 leftmove(turtlename)
+                turtlename.hasmoved = True
                 # print("verily an edge")
             elif turtleonstring[turtlename] == 0:
-                turtlename.leftfacing = True
-                rightmove(turtlename)
-                print("yes indeed an edge")
+                turtlename.rightfacing = True
+                if turtlename.hasmoved == False:
+                    rightmove(turtlename)
+                turtlename.hasmoved = True
+                # print("yes indeed an edge")
             # else:
             #     print(str(turtlename) + " is stuck at " + str(turtleonstring[turtlename]))
             #     stuckturtles += 1
