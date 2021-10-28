@@ -1,10 +1,9 @@
 import turtle
 import math
 testall = False
-rows = 5
 stringdictionary = {}
 stringsdefined = 0
-def double_chevron_net(strings, distance):
+def double_chevron_net(strings, distance, velocity = 8, rows = 5):
 #import the things
     window = turtle.Screen()
     turtledictionary = {}
@@ -83,7 +82,7 @@ def double_chevron_net(strings, distance):
     while row < rows:
         for eachturtle in turtledictionary:
             turtlename = turtledictionary[eachturtle]
-            turtlename.speed(8)
+            turtlename.speed(velocity)
             turtlename.hasmoved = False
             if turtlename.rightfacing == True and turtlename.hasmoved == False:
                 rightmove(turtlename)
@@ -103,7 +102,7 @@ def double_chevron_net(strings, distance):
         row += 1
     # turtle.exitonclick
 
-def candystripe(strings, distance):
+def candystripe(strings, distance, length = 6, velocity = 2):
     #position turtles in colors at columns
     hypdist = math.sqrt(2*(distance**2))
     columndict = {}
@@ -113,55 +112,59 @@ def candystripe(strings, distance):
     timesrun = 0
     colorlist = ["red", "orange", "yellow", "green", "blue", "purple"]
     for number in range(strings):
-        turtledictionary["Turtle number " + str(number)] = turtle.Turtle()
+        turtledictionary[str(number)] = turtle.Turtle()
     for eachturtle in turtledictionary:
         turtlename = turtledictionary[eachturtle]
         turtlename.color(colorlist[turtlesdefined])
+        turtlename.speed(velocity)
         positiondistance = turtlesdefined*distance
-        turtlename.rightfacing = True
         turtlename.forward(positiondistance) 
-        # if turtlesdefined < (strings - 1):
-        #     turtlename.right(45)
-        # else:
-        #     turtlename.right(135)
-        #     turtlename.rightfacing == False
         turtlename.right(45)
         turtlename.rightfacing = True
-        columndict[turtlesdefined] = turtlename
+        columndict[turtlename] = turtlesdefined
         turtlesdefined += 1 
-    # A straight right knot works by swapping the positions of the two strings involved,
-    # and moving them both down one row, while the string on the right makes a "dot knot" on top of the other string.
-    # My code should work the same way.
-    # Take X turtle, and the turtle to its immediate right
-    # Move Y turtle to the left, down to the next row
-    # X turtle moves until it intersects the Y string, dots, and continues right down to the next row.
-    # I'll start by trying to get it to recognize pairs of turtles. I'll start with even numbers of strings and then
-    # figure out how to deal with odd. 
+    row = 0
+    while timesrun < length:
+        if row == 0:
+            #Set alternating turtles facing alternating ways, with even facing right and odd facing left
+            for key in turtledictionary:
+                turtlename = turtledictionary[key]
+                if int(key)%2 == 0:
+                    if turtlename.rightfacing == False:
+                        turtlename.left(90)
+                    turtlename.rightfacing = True
+                else:
+                    if turtlename.rightfacing == True:
+                        turtlename.right(90)
+                    turtlename.rightfacing = False
+        for key in turtledictionary:
+            turtlename = turtledictionary[key]
+            #At edge, go down vertically and turn inward
+            if columndict[turtlename] == 0 and turtlename.rightfacing == False:
+                turtlename.left(45)
+                turtlename.forward(distance)
+                turtlename.left(45)
+                turtlename.rightfacing = True
+            elif columndict[turtlename] == strings-1 and turtlename.rightfacing == True:
+                turtlename.right(45)
+                turtlename.forward(distance)
+                turtlename.right(45)
+                turtlename.rightfacing = False
+            #Moves all turtles forward
+            turtlename.speed(velocity)
+            if turtlename.rightfacing == False:
+                turtlename.forward(hypdist)
+                columndict[turtlename] -= 1
+            else:
+                turtlename.forward(hypdist/2)
+                turtlename.dot()
+                turtlename.forward(hypdist/2)
+                columndict[turtlename] += 1
 
-    #A turtle and its immediate right.
-    while timesrun < 3:
-        for item in columndict:
-            #only the odd-numbered strings, though:
-            if item % 2 == 0:
-                if item < (len(columndict) - 1):
-                #that is, if it's not the second-to-rightmost string:
-                    (leftturtle, rightturtle) = (columndict[item], columndict[item + 1])
-                    rightturtle.right(90)
-                    rightturtle.forward(hypdist)
-                    leftturtle.forward(hypdist/2)
-                    leftturtle.dot()
-                    leftturtle.forward(hypdist/2)
-            #Columndict: Dictionary in which 1 : turtle 1
-                    if timesrun < len(columndict) - 1:
-                        (columndict[timesrun], columndict[timesrun + 1]) = (rightturtle, leftturtle)    
-                        #there has GOT to be a better way to do this   
-                #Turn the left edge around
-                leftestturtle = columndict[0]
-                leftestturtle.left(45)
-                timesrun += 1
-
+        row += 1
+        timesrun += 1
     turtle.exitonclick()
 #run code
 if (__name__ == "__main__"):
-    double_chevron_net(4, 160)
-    candystripe(4, 160)
+    double_chevron_net(4, 60)
+    candystripe(4, 60, 20, 3)
