@@ -127,30 +127,28 @@ class knots:
             turtlename.right(45)
             turtlename.forward(knots.distance)
             turtlename.left(45)
-def diagAltStripes():  
-    bracelet = knots(6, 10)
-    while True:
-        bracelet.crossright(0), bracelet.crossright(2), bracelet.crossright(4)
-        bracelet.edge(0), bracelet.turnleft(1), bracelet.turnleft(3), bracelet.edge(5)
-diagAltStripes()
-# strings = 6
-# bracelet = knots(strings, 5)
-# loops = 0
-# while True:
-#     if loops%2 == 0:
-#         lines = 0
-#         while lines <= 5:
-#             for x in range(strings-1):
-#                 if x%2 == 0:
-#                     if x <= strings/2:
-#                         bracelet.crossright(x)
-#                     else:
-#                         bracelet.crossleft(x)
-#             for x in range(strings-1):
-#                 if x%2 != 0:
-#                     bracelet.crossright(x)
-#         lines += 1
-#     for x in range(strings-1):   
-#         if x == 0 or x == strings-1:
-#             bracelet.edge(x)
-#     loops += 1
+def diagAltStripes(strings = 6):  
+    bracelet = knots(strings, 10)
+    loops = 0
+    while loops < 10:
+        if loops%2 == 0:
+            for x in range(strings-1):
+                if x%2 == 0:
+                    bracelet.crossright(x)
+            for x in range(strings):
+                if x == 0 or x == strings-1:
+                    bracelet.edge(x)
+            for x in range(strings-1):
+                if x%2 == 1:
+                    bracelet.turnleft(x)
+        else:   
+            for x in range(strings-1):
+                if x%2 == 0:
+                    bracelet.turnleft(x)
+            for x in range(strings):
+                if x == 0 or x == strings-1:
+                    bracelet.edge(x)
+            for x in range(strings-1):
+                if x%2 == 1:
+                    bracelet.turnleft(x)
+        loops += 1
