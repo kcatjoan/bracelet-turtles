@@ -7,7 +7,8 @@ class knots:
     turtleonstring = {}
     turtledictionary = {}
 
-    def __init__(self, strings, distance, dotsize = 4, velocity = 2):
+    def __init__(self, strings, stringinput, distance, dotsize = 8, velocity = 2):
+        stringinput = input("1: Red\n2:Orange\n3:Yellow\n4:Green\n5:Blue\n6:Purple\n7:Black\nInput string pattern:")
         import turtle
         import math
         turtle.setworldcoordinates(-50, -200, 200, 50)
@@ -17,11 +18,25 @@ class knots:
         knots.dotsize = dotsize
         turtlesdefined = 0
         timesrun = 0
-        colorlist = ["red", "orange", "gold", "green", "blue", "purple", "red", "orange", "gold", "green", "blue", "purple"]
+        rainbowlist = ["red", "orange", "gold", "green", "blue", "purple", "black"]
+        colorlist = []
+        if len(stringinput) > 0:
+            for char in stringinput:
+                stringcolor = rainbowlist[int(char)-1]
+                colorlist.append(stringcolor)
+        else:
+            colorlist = rainbowlist
+            colorsappended = 0
+            while len(colorlist) < strings:
+                colorlist.append(rainbowlist[colorsappended])
+                #this will cause problems once we get beyond idk 16 strings
         for number in range(strings):
             knots.turtledictionary[str(number)] = turtle.Turtle()
         for eachturtle in knots.turtledictionary:
             turtlename = knots.turtledictionary[eachturtle]
+            #How do I get a value into all string patterns 
+            #that defines what order the colors go in?
+            #It would be better to describe it in each defined pattern.
             turtlename.color(colorlist[turtlesdefined])
             turtlename.speed(velocity)
             positiondistance = turtlesdefined*distance
@@ -33,14 +48,15 @@ class knots:
         print(knots.columndict)
         row = 0
     # def facingturtles(self, stringnumber):
-    #     sortcolumns = sorted(knots.columndict, key = lambda x:knots.columndict[x])
-    #     leftturtle, rightturtle = sortcolumns[stringnumber], sortcolumns[stringnumber+1]
-    #     if leftturtle.rightfacing == False:
-    #         leftturtle.left(90)
-    #         leftturtle.rightfacing = True
-    #     if rightturtle.rightfacing == True:
-    #         rightturtle.right(90)
-    #         rightturtle.rightfacing = False
+        # sortcolumns = sorted(knots.columndict, key = lambda x:knots.columndict[x])
+        # leftturtle, rightturtle = sortcolumns[stringnumber], sortcolumns[stringnumber+1]
+        # return(leftturtle, rightturtle)
+        # if leftturtle.rightfacing == False:
+        #     leftturtle.left(90)
+        #     leftturtle.rightfacing = True
+        # if rightturtle.rightfacing == True:
+        #     rightturtle.right(90)
+        #     rightturtle.rightfacing = False
     def crossright(self, stringnumber):
         sortcolumns = sorted(knots.columndict, key = lambda x:knots.columndict[x])
         #Provides a list of turtlevalues in order of string value (or should)
@@ -127,8 +143,12 @@ class knots:
             turtlename.right(45)
             turtlename.forward(knots.distance)
             turtlename.left(45)
+    def stamp(self, stringnumber):
+        sortcolumns = sorted(knots.columndict, key = lambda x:knots.columndict[x])
+        turtlename = sortcolumns[stringnumber]
+        turtlename.stamp()
 def diagAltStripes(strings = 6):  
-    bracelet = knots(strings, 10)
+    bracelet = knots(strings, stringinput = "", distance = 10)
     loops = 0
     while loops < 10:
         if loops%2 == 0:
@@ -152,3 +172,57 @@ def diagAltStripes(strings = 6):
                 if x%2 == 1:
                     bracelet.turnleft(x)
         loops += 1
+# diagAltStripes(6)
+def diamond1(strings = 6, distance = 10, velocity = 2):
+    bracelet = knots(strings, distance, velocity)
+    loops = 0
+    while loops < 10:
+        for x in range(strings):
+            if x%2 == 0:
+                if x == strings or x == strings-2:
+                    # bracelet.stamp(x)
+                    bracelet.crossleft(x)
+                else:
+                    # print(x)
+                    bracelet.crossright(x)
+        for x in range(strings-1):
+            if x%2 != 0:
+                if x <= (strings-1)/2:
+                    bracelet.crossright(x)
+                else:
+                    bracelet.crossleft(x)
+        for x in range(strings):
+                if x == 0 or x == strings-1:
+                    bracelet.edge(x)
+        for x in range(strings-1):
+            if x%2 == 0:
+                if x != strings-1:
+                    bracelet.crossright(x)
+                else:
+                    bracelet.crossleft(x)
+        for x in range(strings-1):
+            if x%2 != 0:
+                if x <= (strings-1)/2:
+                    bracelet.crossleft(x)
+                else:
+                    bracelet.crossright(x)
+        for x in range(strings):
+                if x == 0 or x == strings-1:
+                    bracelet.edge(x)
+        for x in range(strings-1):
+            if x%2 == 0:
+                if x != 0:
+                    bracelet.crossright(x)
+                else:
+                    bracelet.crossleft(x)
+        for x in range(strings-1):
+            if x%2 != 0:
+                if x <= (strings-1)/2:
+                    bracelet.crossright(x)
+                else:
+                    bracelet.crossleft(x)
+        for x in range(strings):
+                if x == 0 or x == strings-1:
+                    bracelet.edge(x)
+        loops += 1
+diamond1(6, distance =.5)
