@@ -1,2 +1,2 @@
 # bracelet-turtles
-## creates a frienship bracelet using python turtles
+## creates a friendship bracelet using python turtles
