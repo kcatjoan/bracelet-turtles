@@ -8,6 +8,9 @@ class knots:
     turtledictionary = {}
 
     def __init__(self, strings, stringinput, distance, dotsize = 10, velocity = 2):
+        functionlist = ["diagAltStripes", "diamond1", "eyes1"]
+        for name in functionlist:
+            print(name)
         stringinput = input("1: Red\n2:Orange\n3:Yellow\n4:Green\n5:Blue\n6:Purple\n7:Black\nInput string pattern ("+ str(strings)+ " strings):")
         import turtle
         import math
