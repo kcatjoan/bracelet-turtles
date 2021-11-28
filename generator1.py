@@ -7,8 +7,8 @@ class knots:
     turtleonstring = {}
     turtledictionary = {}
 
-    def __init__(self, strings, stringinput, distance, dotsize = 8, velocity = 2):
-        stringinput = input("1: Red\n2:Orange\n3:Yellow\n4:Green\n5:Blue\n6:Purple\n7:Black\nInput string pattern:")
+    def __init__(self, strings, stringinput, distance, dotsize = 10, velocity = 2):
+        stringinput = input("1: Red\n2:Orange\n3:Yellow\n4:Green\n5:Blue\n6:Purple\n7:Black\nInput string pattern ("+ str(strings)+ " strings):")
         import turtle
         import math
         turtle.setworldcoordinates(-50, -200, 200, 50)
@@ -34,9 +34,6 @@ class knots:
             knots.turtledictionary[str(number)] = turtle.Turtle()
         for eachturtle in knots.turtledictionary:
             turtlename = knots.turtledictionary[eachturtle]
-            #How do I get a value into all string patterns 
-            #that defines what order the colors go in?
-            #It would be better to describe it in each defined pattern.
             turtlename.color(colorlist[turtlesdefined])
             turtlename.speed(velocity)
             positiondistance = turtlesdefined*distance
@@ -45,18 +42,8 @@ class knots:
             turtlename.rightfacing = True
             knots.columndict[turtlename] = turtlesdefined
             turtlesdefined += 1 
-        print(knots.columndict)
         row = 0
-    # def facingturtles(self, stringnumber):
-        # sortcolumns = sorted(knots.columndict, key = lambda x:knots.columndict[x])
-        # leftturtle, rightturtle = sortcolumns[stringnumber], sortcolumns[stringnumber+1]
-        # return(leftturtle, rightturtle)
-        # if leftturtle.rightfacing == False:
-        #     leftturtle.left(90)
-        #     leftturtle.rightfacing = True
-        # if rightturtle.rightfacing == True:
-        #     rightturtle.right(90)
-        #     rightturtle.rightfacing = False
+    
     def crossright(self, stringnumber):
         sortcolumns = sorted(knots.columndict, key = lambda x:knots.columndict[x])
         #Provides a list of turtlevalues in order of string value (or should)
@@ -73,8 +60,7 @@ class knots:
         leftturtle.forward(knots.hypdist/2)
         knots.columndict[rightturtle] -= 1
         knots.columndict[leftturtle] += 1
-        # sortcolumns = sorted(knots.columndict, key = lambda x:knots.columndict[x])
-        # print(sortcolumns)
+     
 
     def crossleft(self, stringnumber):
         sortcolumns = sorted(knots.columndict, key = lambda x:knots.columndict[x])
@@ -130,8 +116,6 @@ class knots:
         leftturtle.right(90)
         leftturtle.rightfacing = False
         leftturtle.forward(knots.hypdist/2)
-        # sortcolumns = sorted(knots.columndict, key = lambda x:knots.columndict[x])
-        # print(sortcolumns)
     def edge(self, stringnumber):
         sortcolumns = sorted(knots.columndict, key = lambda x:knots.columndict[x])
         turtlename = sortcolumns[stringnumber]
@@ -147,6 +131,7 @@ class knots:
         sortcolumns = sorted(knots.columndict, key = lambda x:knots.columndict[x])
         turtlename = sortcolumns[stringnumber]
         turtlename.stamp()
+
 def diagAltStripes(strings = 6):  
     bracelet = knots(strings, stringinput = "", distance = 10)
     loops = 0
@@ -172,7 +157,6 @@ def diagAltStripes(strings = 6):
                 if x%2 == 1:
                     bracelet.turnleft(x)
         loops += 1
-# diagAltStripes(6)
 def diamond1(strings = 6, distance = 10, velocity = 2):
     bracelet = knots(strings, distance, velocity)
     loops = 0
@@ -225,4 +209,55 @@ def diamond1(strings = 6, distance = 10, velocity = 2):
                 if x == 0 or x == strings-1:
                     bracelet.edge(x)
         loops += 1
-diamond1(6, distance =.5)
+        
+def eyes1(strings = 4, distance = 10, velocity = 2):
+    bracelet = knots(strings, distance, velocity)
+    loops = 0 
+    while loops < 1:
+        #1
+        for x in range(strings):
+            if x%2==0:
+                bracelet.turnleft(x)
+        #2
+        for x in range(strings-1):
+            if x%2!=0:
+                bracelet.turnright(x)
+        for x in range(strings):
+                if x == 0 or x == strings-1:
+                    bracelet.edge(x)
+        #3
+        for x in range(strings):
+            if x%2==0:
+                bracelet.turnleft(x)
+        #4
+        for x in range(strings-1):
+            if x%2!=0:
+                bracelet.turnleft(x)
+        for x in range(strings):
+                if x == 0 or x == strings-1:
+                    bracelet.edge(x)      
+        #5
+        for x in range(strings):
+            if x%2==0:
+                bracelet.turnright(x)
+        #6
+        for x in range(strings-1):
+            if x%2!=0:
+                bracelet.turnright(x)
+        for x in range(strings):
+                if x == 0 or x == strings-1:
+                    bracelet.edge(x)
+        #7
+        for x in range(strings):
+            if x%2==0:
+                bracelet.turnright(x)
+        #8
+        for x in range(strings-1):
+            if x%2!=0:
+                bracelet.turnleft(x)
+        for x in range(strings):
+                if x == 0 or x == strings-1:
+                    bracelet.edge(x)   
+        loops += 1
+import turtle
+turtle.exitonclick()
